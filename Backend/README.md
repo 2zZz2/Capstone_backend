@@ -1,45 +1,28 @@
 ### Capstone database installation
 
-1. ##### Requirments
+1. ##### Install Packages
 
-   First create virtual environment:
-
-   ```
-   conda create -n strym "python=3.7"
-   ```
-
-   install the following modules
+   Install AnvilL:
 
    ```
-   pip install strym
-   pip install SQLAlchemy==1.4.35
-   pip install PyMySQL==1.0.2
+   pip install anvil-uplink
    ```
-
-2. ##### Create tables
-
-   First create your tables in your database.
-
-   Here is an example
-
+   
+   Install PyMySQL:
    ```
-   m_host='sh-cynosdbmysql-grp-75qwodo8.sql.tencentcdb.com'
-   m_port =29563
-   m_user='capstone'
-   m_password='capstone123!!!'
-   m_db='circle_database_version3'
+   pip install PyMySQL
    ```
-
-3.  **Batch insert**
-
-   batch_insert.ipynb will help you inset all the information needed for the project. Make sure all the csv files are in the same dir. you can all change the serach range with the codes follows:
-
+   
+2. ##### Please refill the database connection infomation in the fourth block
+   
+   Fill in host, port, user, and password you create when creating the database; for example:
    ```
-   can_list, gps_list = get_all_file('.')
+   def set_connection():
+    db = pymysql.connect(host='localhost',
+                         port = 3306, user='root', password='htdhylyzhh',
+                         db='circle_database_version3')
+    return db
    ```
-
-4. **issues**
-
    
 
 
